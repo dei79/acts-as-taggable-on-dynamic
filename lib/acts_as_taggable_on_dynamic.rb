@@ -1,6 +1,9 @@
-module ActsAsTaggableOnDynamic
+# load rails
+require 'rails'
 
-end
+# it's an engine
+require 'acts_as_taggable_on_dynamic/engine'
+require 'acts_as_taggable_on_dynamic/version'
 
 # load the dependencies
 require('acts-as-taggable-on')
