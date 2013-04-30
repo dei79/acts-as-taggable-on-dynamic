@@ -1,3 +1,19 @@
 sqlite3:
   adapter: sqlite3
-  database: acts_as_taggable_on.sqlite3
+  database: acts_as_taggable_on_dynamic.sqlite3
+
+  mysql:
+    adapter: mysql2
+    hostname: localhost
+    username: root
+    password:
+    database: acts_as_taggable_on_dynamic
+    charset: utf8
+
+  postgresql:
+    adapter: postgresql
+    hostname: localhost
+    username: postgres
+    password:
+    database: acts_as_taggable_on_dynamic
+    encoding: utf8
