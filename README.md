@@ -73,4 +73,4 @@ Add dynamic tag renderer to your details view (normally show.html.erb)
 
 ## License
 
-See [LICENSE](https://github.com/mbleigh/acts-as-taggable-on-dynamic/blob/master/LICENSE.md)
+See [LICENSE](https://github.com/dei79/acts-as-taggable-on-dynamic/blob/master/LICENSE.md)
