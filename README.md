@@ -65,7 +65,7 @@ Add dynamic tag renderer to your details view (normally show.html.erb)
       <%= @location.tag_list_on(context)%>
     </p>
 <% end %>
-``
+```
 
 ## Maintainer
 
