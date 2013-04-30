@@ -18,5 +18,12 @@ module ActsAsTaggableOnDynamic
         end
       end
     end
+
+    def tag_context_add(model, options = {})
+      content_tag(:div, :id => "act-as-taggable-dynamic-new_context_form") do
+        content_tag(:a, options[:label] ? options[:label] : "add context" , :href => "#") +
+        content_tag(:input, "", :name => "act-as-taggable-dynamic-new_context_form-input", :type => :text, "data-model-type" => model.class.name.downcase)
+      end
+    end
   end
 end
