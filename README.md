@@ -35,6 +35,32 @@ If you want, add a `.ruby-version` file in the project root (and use rbenv or RV
 
 ## Usage
 
+Add dynamic tag context support to your existing form (normally _form)
+
+```ruby
+<%= tag_context_form_template(@location) %>
+<%= form_for(@location) do |f| %>
+    ...
+    <%= tag_context_form(@location) %>
+    <%= tag_context_add(@location) %>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
+```
+
+Add dynamic tag renderer to your details view (normally show.html.erb)
+
+```ruby
+<% @location.tag_context_list.each do |context| %>
+    <p>
+      <b>Tags (Context - <%=context%>):</b>
+      <%= @location.tag_list_on(context)%>
+    </p>
+<% end %>
+``
+
 ## Maintainer
 
 * [Dirk Eisenberg](https://github.com/dei79)
