@@ -44,6 +44,14 @@ Add our javascript which comes through the gem to the asset pipeline by adding t
 //= require taggable.dynamic
 ```
 
+Mark your model as taggable with dynamic support
+
+```ruby
+class Location < ActiveRecord::Base
+  acts_as_taggable_dynamic
+end
+```
+
 Add dynamic tag context support to your existing form (normally _form)
 
 ```ruby
