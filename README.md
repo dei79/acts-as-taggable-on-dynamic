@@ -1,4 +1,7 @@
 # ActsAsTaggableOnDynamic
+
+[![Build Status](https://secure.travis-ci.org/mbleigh/acts-as-taggable-on-dynamic.png)](http://travis-ci.org/dei79/acts-as-taggable-on-dynamic)
+
 This plugin is an extension to the amazing [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) plugin which allows to tag different models. The dynamic extension
 allows to use the standard rails form generators and integrates dynamic contexts for the tags. It's nothing more needed than
 adding some helpers into your form view. It's also using [handlebars](https://github.com/leshill/handlebars_assets) template for the javascript logic in the formular.
