@@ -35,6 +35,12 @@ If you want, add a `.ruby-version` file in the project root (and use rbenv or RV
 
 ## Usage
 
+Add our javascript which comes through the gem to the asset pipeline by adding the following line in the application.js file:
+
+```javascript
+//= require taggable.dynamic
+```
+
 Add dynamic tag context support to your existing form (normally _form)
 
 ```ruby
