@@ -1,5 +1,5 @@
 # ActsAsTaggableOnDynamic
-This plugin is an extension to the amazing acts-as-taggable-on plugin which allows to tag different models. The dynamic extension
+This plugin is an extension to the amazing [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) plugin which allows to tag different models. The dynamic extension
 allows to use the standard rails form generators and integrates dynamic contexts for the tags. It's nothing more needed than
 adding some helpers into your form view.
 
