@@ -13,11 +13,13 @@ require('acts_as_taggable_on_dynamic/dynamic_mass_assignment_authorizer')
 require('acts_as_taggable_on_dynamic/dynamic_tag_context_attributes')
 require('acts_as_taggable_on_dynamic/dynamic_tag_helpers')
 require('acts_as_taggable_on_dynamic/taggable')
+require('acts_as_taggable_on_dynamic/tag_owner')
 require('acts_as_taggable_on_dynamic/utils')
 
 # handle ActiveRecord stuff
 if defined?(ActiveRecord::Base)
   ActiveRecord::Base.extend ActsAsTaggableOnDynamic::Taggable
+  ActiveRecord::Base.send :include, ActsAsTaggableOnDynamic::TagOwner
 end
 
 if defined?(ActionView::Base)

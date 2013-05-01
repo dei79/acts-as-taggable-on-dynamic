@@ -48,7 +48,11 @@ module ActsAsTaggableOnDynamic
       # Returns the contetn of a give tag list
       #
       def tag_list_content_on(context)
-       self.tags_on(context).map(&:to_s).join(',').chomp(',')
+        if (self.is_auto_tag_ownership_enabled?)
+          self.owner_tags_on(self.tag_owner, context).map(&:to_s).join(',').chomp(',')
+        else
+          self.tags_on(context).map(&:to_s).join(',').chomp(',')
+        end
       end
 
       ##
@@ -63,9 +67,9 @@ module ActsAsTaggableOnDynamic
           context = dynamic_tag_context_from_attribute(attribute).to_sym
 
           if (method_name.to_s.ends_with?("="))
-            self.set_tag_list_on(context, args.join(',').chomp(','))
+            self.write_tag_list_on(context, args.join(',').chomp(','))
           else
-            return tag_list_content_on(context)
+            self.tag_list_content_on(context)
           end
         else
           super
@@ -79,9 +83,21 @@ module ActsAsTaggableOnDynamic
         dynamic_tag_context_attribute?(method_name.to_s.chomp("=")) || tag_list_attribute?(method_name.to_s.chomp("=")) || super
       end
 
-
+      ##
+      # Returns the mass assignment authorizer
+      #
       def mass_assignment_authorizer(role)
         ActsAsTaggableOnDynamic::DynamicMassAssignmentAuthorizer.new(self, super(role))
+      end
+
+      ##
+      # Handles the write request
+      def write_tag_list_on(context, tags)
+        if (self.is_auto_tag_ownership_enabled?)
+          self.tag_owner.tag(self, :with => tags, :on => context, :skip_save => true)
+        else
+          self.set_tag_list_on(context, tags)
+        end
       end
     end
   end

@@ -87,6 +87,14 @@ Add dynamic tag renderer to your details view (normally show.html.erb)
 <% end %>
 ```
 
+Handle magic ownership
+
+```ruby
+@model.tag_owner = @owner
+....
+@model.save!
+```
+
 ## Maintainer
 
 * [Dirk Eisenberg](https://github.com/dei79)

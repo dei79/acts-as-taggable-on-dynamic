@@ -21,4 +21,8 @@ ActiveRecord::Schema.define :version => 0 do
     t.column :type, :string
   end
 
+  create_table :users, :force => true do |t|
+    t.column :name, :string
+    t.column :type, :string
+  end
 end
